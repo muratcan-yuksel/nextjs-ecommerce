@@ -1,0 +1,4 @@
+{
+  //preset-react bcs I did get an error when omitted
+  "presets": ["next/babel", "@babel/preset-react"]
+}
