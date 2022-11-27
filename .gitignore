@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-nextjs-ecommerce-sanity/node_modules
+/nextjs-ecommerce-sanity/node_modules
 /.pnp
 .pnp.js
 
