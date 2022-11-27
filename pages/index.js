@@ -1,7 +1,8 @@
 import React from "react";
 import { Product, FooterBanner, HeroBanner } from "../components";
+import { client } from "../lib/client";
 
-const Home = () => (
+const Home = ({ product, bannerData }) => (
   <div>
     <HeroBanner />
     <div className="products-heading">
@@ -15,5 +16,20 @@ const Home = () => (
     <FooterBanner />
   </div>
 );
+
+export const getServersideProps = async () => {
+  const query = `*[_type == "product"]`;
+  const products = await client.fetch(query);
+
+  bannerQuery = `*[_type == "banner"]`;
+  const bannerData = await client.fetch(bannerQuery);
+
+  return {
+    props: {
+      products,
+      bannerData,
+    },
+  };
+};
 
 export default Home;
